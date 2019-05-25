@@ -21,7 +21,7 @@ before_install:
   - gem build macaddress.gemspec
 
 install:
-  - gem install macaddress
+  - gem install macaddress --development
 
 script:
   - rake test
