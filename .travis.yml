@@ -18,7 +18,7 @@ rvm:
 # job phases
 
 before_install:
-  - gem build macaddress.spec
+  - gem build macaddress.gemspec
 
 install:
   - gem install macaddress
