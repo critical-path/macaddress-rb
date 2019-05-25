@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
                 	   'lib/macaddress/ei48.rb',
                 	   'lib/macaddress/macaddress.rb',
                 	   'lib/macaddress/octet.rb']
-  spec.add_development_dependency 'coveralls', '~> 0.8'
   spec.add_development_dependency 'minitest', '~> 5.11'
   spec.add_development_dependency 'rake', '~> 12.3'
   spec.add_development_dependency 'simplecov', '~> 0.16.1'
