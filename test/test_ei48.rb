@@ -5,18 +5,18 @@ require 'minitest/autorun'
 require 'macaddress'
 
 invalid = [
-  '0a',                 # Too few "digits"
-  '0a1b2c3d4e5f6',      # Too many "digits"
+  '0a',                 # Too few digits
+  '0a1b2c3d4e5f6',      # Too many digits
   '0a1b2c3d4e5g',       # Invalid digit
-  '-0a-1b-2c-3d-4e-5f', # Leading "hyphen"
-  '0a-1b-2c-3d-4e-5f-', # Trailing "hyphen"
-  '0a-1b-2c-3d-4e5f',   # Missing "hyphen"
-  ':0a:1b:2c:3d:4e:5f', # Leading "colon"
-  '0a:1b:2c:3d:4e:5f:', # Trailing "colon"
-  '0a:1b:2c:3d:4e5f',   # Missing "colon"
-  '.0a1b.2c3d.4e5f',    # Leading "dot"
-  '0a1b.2c3d.4e5f.',    # Trailing "dot"
-  '0a1b.2c3d4e5f'       # Missing "dot"
+  '-0a-1b-2c-3d-4e-5f', # Leading hyphen
+  '0a-1b-2c-3d-4e-5f-', # Trailing hyphen
+  '0a-1b-2c-3d-4e5f',   # Missing hyphen
+  ':0a:1b:2c:3d:4e:5f', # Leading colon
+  '0a:1b:2c:3d:4e:5f:', # Trailing colon
+  '0a:1b:2c:3d:4e5f',   # Missing colon
+  '.0a1b.2c3d.4e5f',    # Leading dot
+  '0a1b.2c3d.4e5f.',    # Trailing dot
+  '0a1b.2c3d4e5f'       # Missing dot
 ]
 
 invalid.each do |argument|
