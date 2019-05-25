@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/critical-path/macaddress-rb.svg?branch=master)](https://travis-ci.com/critical-path/macaddress-rb)
+
 ## Introduction
 
 Media access control (MAC) addresses play an important role in local-area networks.  They also pack a lot of information into 48-bit hexadecimal strings!
