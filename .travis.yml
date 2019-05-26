@@ -13,15 +13,11 @@ language: ruby
 rvm:
   - 2.6.3
   - 2.5.5
-  - 2.0.0
 
 # job phases
 
-before_install:
-  - gem build macaddress.gemspec
-
 install:
-  - gem install macaddress --development
+  - bundler install --with=development
 
 script:
-  - rake test
+  - bundler exec rake test
