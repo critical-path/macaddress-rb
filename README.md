@@ -16,8 +16,7 @@ To install macaddress with test-related dependencies, run the following commands
 ```console
 [user@host ~]$ git clone git@github.com:critical-path/macaddress-rb.git
 [user@host ~]$ cd macaddress-rb
-[user@host macaddress-rb]$ gem build macaddress.gemspec
-[user@host macaddress-rb]$ gem install macaddress --development
+[user@host macaddress-rb]$ bundle install --with=development
 ```
 
 To install macaddress without test-related dependencies, run the following commands from your shell.
@@ -25,8 +24,7 @@ To install macaddress without test-related dependencies, run the following comma
 ```console
 [user@host ~]$ git clone git@github.com:critical-path/macaddress-rb.git
 [user@host ~]$ cd macaddress-rb
-[user@host macaddress-rb]$ gem build macaddress.gemspec
-[user@host macaddress-rb]$ gem install macaddress
+[user@host macaddress-rb]$ bundle install
 ```
 
 ## Using macaddress
@@ -164,7 +162,7 @@ irb(main)018:0> mac.to_dot_notation
 To conduct testing, run the following command from your shell.
 
 ```console
-[user@host macaddress-rb]$ rake test
+[user@host macaddress-rb]$ bundle exec rake test
 ```
 
 
@@ -173,5 +171,5 @@ To conduct testing, run the following command from your shell.
 To build the documentation for macaddress, run the following command from your shell.
 
 ```console
-[user@host macaddress-rb]$ rake yard
+[user@host macaddress-rb]$ bundle exec rake yard
 ```
