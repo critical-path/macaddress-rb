@@ -25,3 +25,6 @@ install:
 
 script:
   - bundle exec rake test
+
+after_success:
+  - coveralls push
