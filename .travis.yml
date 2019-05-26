@@ -16,8 +16,11 @@ rvm:
 
 # job phases
 
+before_install:
+  - bundle update --bundler
+
 install:
-  - bundler install --with=development
+  - bundle install --with=development
 
 script:
-  - bundler exec rake test
+  - bundle exec rake test
