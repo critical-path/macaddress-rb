@@ -17,7 +17,8 @@ rvm:
 # job phases
 
 before_install:
-  - bundle update --bundler
+  - gem update --system
+  - gem install bundler
 
 install:
   - bundle install --with=development
