@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/critical-path/macaddress-rb.svg?branch=master)](https://travis-ci.com/critical-path/macaddress-rb)
+[![Build Status](https://travis-ci.com/critical-path/macaddress-rb.svg?branch=master)](https://travis-ci.com/critical-path/macaddress-rb) [![Coverage Status](https://coveralls.io/repos/github/critical-path/macaddress-rb/badge.svg?branch=master)](https://coveralls.io/github/critical-path/macaddress-rb?branch=master)
 
 ## Introduction
 

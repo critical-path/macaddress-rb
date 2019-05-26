@@ -24,7 +24,4 @@ install:
   - bundle install --with=development
 
 script:
-  - bundle exec rake test
-
-after_success:
-  - coveralls push
+  - bundle exec rake coveralls
