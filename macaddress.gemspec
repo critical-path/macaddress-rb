@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name 		= 'macaddress'
-  spec.version 		= '0.1.0'
+  spec.version 		= '0.2.0'
   spec.date 		= '2019-05-25'
   spec.summary 		= 'macaddress'
   spec.description 	= "The macaddress library makes it easy\

@@ -8,6 +8,9 @@ module Octet
   # This is useful when working with the IEEE's extended unique
   # identifiers and extended local identifiers.
   class Octet
+    # A regular expression used by Octet.
+    DIGITS = Regexp.new('^[0-9A-Fa-f]{2}$')
+
     # The hexadecimal digits passed in by the user.
     #
     # @return [String]
@@ -37,8 +40,7 @@ module Octet
     #
     # @return [Boolean]
     def valid?
-      pattern = Regexp.new('^[0-9A-Fa-f]{2}$')
-      pattern.match(@original) ? true : false
+      DIGITS.match(@original) ? true : false
     end
 
     # The hexadecimal digits afte replacing all uppercase

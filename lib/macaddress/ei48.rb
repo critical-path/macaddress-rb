@@ -16,6 +16,17 @@ module EI48
   # Helpful link:
   # https://standards.ieee.org/products-services/regauth/tut/index.html
   class ExtendedIdentifier48
+    # Regular expressions used by ExtendedIdentifier48.
+    PATTERNS = {
+      PLAIN: Regexp.new('^[0-9A-Fa-f]{12}$'),
+      HYPHEN: Regexp.new('^([0-9A-Fa-f]{2}[-]{1}){5}[0-9A-Fa-f]{2}$'),
+      COLON: Regexp.new('^([0-9A-Fa-f]{2}[:]{1}){5}[0-9A-Fa-f]{2}$'),
+      DOT: Regexp.new('^([0-9A-Fa-f]{4}[.]{1}){2}[0-9A-Fa-f]{4}$'),
+      NOT_DIGITS: Regexp.new('[^0-9a-f]'),
+      TWO_DIGITS: Regexp.new('[0-9a-f]{2}'),
+      FOUR_DIGITS: Regexp.new('[0-9a-f]{4}')
+    }.freeze
+
     # The hexadecimal identifier passed in by the user.
     #
     # @return [String]
@@ -47,18 +58,13 @@ module EI48
     #
     # @return [Boolean]
     def valid?
-      plain = Regexp.new('^[0-9A-Fa-f]{12}$')
-      hyphen = Regexp.new('^([0-9A-Fa-f]{2}[-]{1}){5}[0-9A-Fa-f]{2}$')
-      colon = Regexp.new('^([0-9A-Fa-f]{2}[:]{1}){5}[0-9A-Fa-f]{2}$')
-      dot = Regexp.new('^([0-9A-Fa-f]{4}[.]{1}){2}[0-9A-Fa-f]{4}$')
-
-      if plain.match(@original)
+      if PATTERNS[:PLAIN].match(@original)
         true
-      elsif hyphen.match(@original)
+      elsif PATTERNS[:HYPHEN].match(@original)
         true
-      elsif colon.match(@original)
+      elsif PATTERNS[:COLON].match(@original)
         true
-      elsif dot.match(@original)
+      elsif PATTERNS[:DOT].match(@original)
         true
       else
         false
@@ -74,16 +80,14 @@ module EI48
     #
     # @return [String]
     def normalized
-      pattern = Regexp.new('[^0-9a-f]')
-      @original.downcase.gsub(pattern, '')
+      @original.downcase.gsub(PATTERNS[:NOT_DIGITS], '')
     end
 
     # Each of the hexadecimal identifier's six octets.
     #
     # @return [Array]
     def octets
-      pattern = Regexp.new('[0-9a-f]{2}')
-      matches = normalized.scan(pattern)
+      matches = normalized.scan(PATTERNS[:TWO_DIGITS])
       matches.map { |match| Octet::Octet.new(match) }
     end
 
@@ -202,8 +206,7 @@ module EI48
     #
     # @return [String]
     def to_hyphen_notation
-      pattern = Regexp.new('[0-9a-f]{2}')
-      matches = normalized.scan(pattern)
+      matches = normalized.scan(PATTERNS[:TWO_DIGITS])
       matches.join('-')
     end
 
@@ -212,8 +215,7 @@ module EI48
     #
     # @return [String]
     def to_colon_notation
-      pattern = Regexp.new('[0-9a-f]{2}')
-      matches = normalized.scan(pattern)
+      matches = normalized.scan(PATTERNS[:TWO_DIGITS])
       matches.join(':')
     end
 
@@ -222,8 +224,7 @@ module EI48
     #
     # @return [String]
     def to_dot_notation
-      pattern = Regexp.new('[0-9a-f]{4}')
-      matches = normalized.scan(pattern)
+      matches = normalized.scan(PATTERNS[:FOUR_DIGITS])
       matches.join('.')
     end
   end
