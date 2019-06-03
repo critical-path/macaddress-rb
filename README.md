@@ -60,7 +60,7 @@ irb(main)002:0> mac = MACAddress::MediaAccessControlAddress.new("a0b1.c2d3.e4f5"
 => #<MACAddress::MediaAccessControlAddress:0x00000002787628 @original="a0b1.c2d3.e4f5">
 ```
 
-To determine whether the MAC address is a broadcast, a multicast (layer-two), or a unicast address, access its `broadcast?`, `multicast?`, and `unicast?` properties.
+To determine whether the MAC address is a broadcast, a multicast (layer-two), or a unicast address, call its `broadcast?`, `multicast?`, and `unicast?` methods.
 
 ```ruby
 irb(main)003:0> mac.broadcast?
@@ -77,7 +77,7 @@ irb(main)005:0> mac.unicast?
 => true
 ```
 
-To determine whether the MAC address is a universally-administered address (UAA) or a locally-administered address (LAA), access its `uaa?` and `laa?` properties.
+To determine whether the MAC address is a universally-administered address (UAA) or a locally-administered address (LAA), call its `uaa?` and `laa?` methods.
 
 ```ruby
 irb(main)006:0> mac.uaa?
@@ -89,21 +89,21 @@ irb(main)007:0> mac.laa?
 => true
 ```
 
-To work with the MAC address's octets, access its `octets` property, which contains six `Octet` objects.
+To work with the MAC address's octets, call its `octets` method, which returns six `Octet` objects.
 
 ```ruby
 irb(main)008:0> mac.octets
 => [#<Octet::Octet:0x000000027b76e8 @original="a0">, #<Octet::Octet:0x000000027b7580 @original="b1">, #<Octet::Octet:0x000000027b7418 @original="c2">, #<Octet::Octet:0x000000027b72b0 @original="d3">, #<Octet::Octet:0x000000027b7148 @original="e4">, #<Octet::Octet:0x000000027b6fe0 @original="f5">]
 ```
 
-To determine whether the MAC address is an extended unique identifier (EUI), an extended local identifier (ELI), or unknown, access its `type?` property.
+To determine whether the MAC address is an extended unique identifier (EUI), an extended local identifier (ELI), or unknown, call its `type?` method.
 
 ```ruby
 irb(main)009:0> mac.type?
 => "unique"
 ```
 
-To determine whether the MAC address has an organizationally-unique identifier (OUI) or a company ID (CID), access its `oui?` and `cid?` properties.
+To determine whether the MAC address has an organizationally-unique identifier (OUI) or a company ID (CID), call its `oui?` and `cid?` methods.
 
 ```ruby
 irb(main)010:0> mac.oui?
@@ -115,7 +115,7 @@ irb(main)011:0> mac.cid?
 => false
 ```
 
-To view the binary equivalent of the MAC address, access its `binary` and `reverse_binary` properties. With `binary`, the most-significant digit of each octet appears first.  With `reverse_binary`, the least-significant digit of each octet appears first.
+To view the binary equivalent of the MAC address, call its `binary` and `reverse_binary` methods. With `binary`, the most-significant digit of each octet appears first.  With `reverse_binary`, the least-significant digit of each octet appears first.
 
 ```ruby
 irb(main)012:0> mac.binary
