@@ -66,7 +66,7 @@ module MACAddress
     #
     # @return [Boolean]
     def uaa?
-      unicast? && first_octet.binary.slice(6) == '0' ? true : false
+      unicast? && first_octet.binary.slice(6) == '0'
     end
 
     # Whether the MAC address is a locally-administered
@@ -79,7 +79,7 @@ module MACAddress
     #
     # @return [Boolean]
     def laa?
-      unicast? && first_octet.binary.slice(6) == '1' ? true : false
+      unicast? && first_octet.binary.slice(6) == '1'
     end
   end
 end
