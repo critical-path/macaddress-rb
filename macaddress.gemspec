@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |spec|
   spec.name 		= 'macaddress'
-  spec.version 		= '0.3.0'
-  spec.date 		= '2019-06-20'
+  spec.version 		= '0.4.0'
+  spec.date 		= '2019-07-05'
   spec.summary 		= 'macaddress'
   spec.description 	= "The macaddress library makes it easy\
                            to work with media access control\
@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.11'
   spec.add_development_dependency 'rake', '~> 12.3'
   spec.add_development_dependency 'simplecov', '~> 0.16'
-  spec.add_development_dependency 'yard', '~> 0.9'
+  spec.add_development_dependency 'yard', '~> 0.9.2'
 end
