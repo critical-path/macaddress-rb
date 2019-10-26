@@ -54,6 +54,17 @@ module Octet
       @original.downcase
     end
 
+    # The decimal equivalent of the hexadecimal digits passed
+    # in by the user.
+    #
+    # For example, if the user passes in `A0`, then Octet
+    # will return `160`.
+    #
+    # @return [Integer]
+    def decimal
+      normalized.hex
+    end
+
     # The binary equivalent of the hexadecimal digits passed
     # in by the user.  *The most-significant digit appears first.*
     #
@@ -62,7 +73,6 @@ module Octet
     #
     # @return [String]
     def binary
-      decimal = normalized.hex
       decimal.to_s(2).rjust(8, '0')
     end
 

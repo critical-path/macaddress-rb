@@ -37,6 +37,7 @@ euis = [
   {
     'digits' => 'a0b1c2d3e4f5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -49,6 +50,7 @@ euis = [
   {
     'digits' => 'A0B1C2D3E4F5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -61,6 +63,7 @@ euis = [
   {
     'digits' => 'a0-b1-c2-d3-e4-f5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -73,6 +76,7 @@ euis = [
   {
     'digits' => 'A0-B1-C2-D3-E4-F5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -85,6 +89,7 @@ euis = [
   {
     'digits' => 'a0:b1:c2:d3:e4:f5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -97,6 +102,7 @@ euis = [
   {
     'digits' => 'A0:B1:C2:D3:E4:F5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -109,6 +115,7 @@ euis = [
   {
     'digits' => 'a0b1.c2d3.e4f5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -121,6 +128,7 @@ euis = [
   {
     'digits' => 'A0B1.C2D3.E4F5',
     'normalized' => 'a0b1c2d3e4f5',
+    'decimal' => 176685338322165,
     'binary' => '101000001011000111000010110100111110010011110101',
     'reverse_binary' => '000001011000110101000011110010110010011110101111',
     'fragments24' => %w[a0b1c2 d3e4f5],
@@ -169,6 +177,12 @@ euis.each do |argument|
     describe '.first_octet' do
       it 'should be a kind of of EI48::ExtendedIdentifier48' do
         assert_kind_of EI48::ExtendedIdentifier48, ei48
+      end
+    end
+
+    describe '.decimal' do
+      it "should equal #{argument['decimal']}" do
+        assert_equal ei48.decimal, argument['decimal']
       end
     end
 
@@ -244,6 +258,7 @@ elis = [
   {
     'digits' => '0a1b2c3d4e5f',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -256,6 +271,7 @@ elis = [
   {
     'digits' => '0A1B2C3D4E5F',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -268,6 +284,7 @@ elis = [
   {
     'digits' => '0a-1b-2c-3d-4e-5f',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -280,6 +297,7 @@ elis = [
   {
     'digits' => '0A-1B-2C-3D-4E-5F',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -292,6 +310,7 @@ elis = [
   {
     'digits' => '0a:1b:2c:3d:4e:5f',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -304,6 +323,7 @@ elis = [
   {
     'digits' => '0A:1B:2C:3D:4E:5F',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -316,6 +336,7 @@ elis = [
   {
     'digits' => '0a1b.2c3d.4e5f',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -328,6 +349,7 @@ elis = [
   {
     'digits' => '0A1B.2C3D.4E5F',
     'normalized' => '0a1b2c3d4e5f',
+    'decimal' => 11111822610015,
     'binary' => '000010100001101100101100001111010100111001011111',
     'reverse_binary' => '010100001101100000110100101111000111001011111010',
     'fragments24' => %w[0a1b2c 3d4e5f],
@@ -376,6 +398,12 @@ elis.each do |argument|
     describe '.first_octet' do
       it 'should be a kind of of EI48::ExtendedIdentifier48' do
         assert_kind_of EI48::ExtendedIdentifier48, ei48
+      end
+    end
+
+    describe '.decimal' do
+      it "should equal #{argument['decimal']}" do
+        assert_equal ei48.decimal, argument['decimal']
       end
     end
 
@@ -451,6 +479,7 @@ null_euis = [
   {
     'digits' => 'ffffffffffff',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -463,6 +492,7 @@ null_euis = [
   {
     'digits' => 'FFFFFFFFFFFF',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -475,6 +505,7 @@ null_euis = [
   {
     'digits' => 'ff-ff-ff-ff-ff-ff',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -487,6 +518,7 @@ null_euis = [
   {
     'digits' => 'FF-FF-FF-FF-FF-FF',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -499,6 +531,7 @@ null_euis = [
   {
     'digits' => 'ff:ff:ff:ff:ff:ff',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -511,6 +544,7 @@ null_euis = [
   {
     'digits' => 'FF:FF:FF:FF:FF:FF',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -523,6 +557,7 @@ null_euis = [
   {
     'digits' => 'ffff.ffff.ffff',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -535,6 +570,7 @@ null_euis = [
   {
     'digits' => 'FFFF.FFFF.FFFF',
     'normalized' => 'ffffffffffff',
+    'decimal' => 281474976710655,
     'binary' => '111111111111111111111111111111111111111111111111',
     'reverse_binary' => '111111111111111111111111111111111111111111111111',
     'fragments24' => %w[ffffff ffffff],
@@ -583,6 +619,12 @@ null_euis.each do |argument|
     describe '.first_octet' do
       it 'should be a kind of of EI48::ExtendedIdentifier48' do
         assert_kind_of EI48::ExtendedIdentifier48, ei48
+      end
+    end
+
+    describe '.decimal' do
+      it "should equal #{argument['decimal']}" do
+        assert_equal ei48.decimal, argument['decimal']
       end
     end
 

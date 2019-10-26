@@ -115,44 +115,51 @@ irb(main)011:0> mac.cid?
 => false
 ```
 
+To view the decimal equivalent of the MAC address, call the `decimal` method.
+
+```ruby
+irb(main)0:12:0> mac.decimal
+=> 176685338322165 
+```
+
 To view the binary equivalent of the MAC address, call the `binary` and `reverse_binary` methods. With `binary`, the most-significant digit of each octet appears first.  With `reverse_binary`, the least-significant digit of each octet appears first.
 
 ```ruby
-irb(main)012:0> mac.binary
+irb(main)013:0> mac.binary
 => "101000001011000111000010110100111110010011110101"
 ```
 
 ```ruby
-irb(main)013:0> mac.reverse_binary
+irb(main)014:0> mac.reverse_binary
 => "000001011000110101000011110010110010011110101111"
 ```
 
 To return the MAC address's two "fragments," call the `to_fragments` method.  For an EUI, this means the 24-bit OUI as the first fragment and the remaining interface-specific bits as the second fragment.  For an ELI, this means the 24-bit CID as the first fragment and the remaining interface-specific bits as the second fragment.
 
 ```ruby
-irb(main)014:0> mac.to_fragments
+irb(main)015:0> mac.to_fragments
 => ["a0b1c2", "d3e4f5"]
 ```
 
 To return the MAC address in different notations, call the `to_plain_notation`, `to_hyphen_notation`, `to_colon_notation`, and `to_dot_notation` methods.
 
 ```ruby
-irb(main)015:0> mac.to_plain_notation
+irb(main)016:0> mac.to_plain_notation
 => "a0b1c2d3e4f5"
 ```
 
 ```ruby
-irb(main)016:0> mac.to_hyphen_notation
+irb(main)017:0> mac.to_hyphen_notation
 => "a0-b1-c2-d3-e4-f5"
 ```
 
 ```ruby
-irb(main)017:0> mac.to_colon_notation
+irb(main)018:0> mac.to_colon_notation
 => "a0:b1:c2:d3:e4:f5"
 ```
 
 ```ruby
-irb(main)018:0> mac.to_dot_notation
+irb(main)019:0> mac.to_dot_notation
 => "a0b1.c2d3.e4f5"
 ```
 

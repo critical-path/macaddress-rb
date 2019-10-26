@@ -98,6 +98,17 @@ module EI48
       octets.first
     end
 
+    # The decimal equivalent of the hexadecimal digits passed
+    # in by the user.
+    #
+    # For example, if the user passes in `A0-B1-C2-D3-E4-F5`,
+    # then ExtendedIdentifier48 will return `176685338322165`.
+    #
+    # @return [Integer]
+    def decimal
+      normalized.hex
+    end
+
     # The binary equivalent of the hexadecimal identifier passed
     # in by the user.  *The most-significant digit of each
     # octet appears first.*
