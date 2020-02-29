@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |spec|
   spec.name 		= 'macaddress'
-  spec.version 		= '0.5.0'
-  spec.date 		= '2019-10-26'
+  spec.version 		= '0.6.0'
+  spec.date 		= '2020-02-29'
   spec.summary 		= 'macaddress'
   spec.description 	= "The macaddress library makes it easy\
                            to work with media access control\
